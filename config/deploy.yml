@@ -2,12 +2,12 @@
 service: chrisfagg_tech
 
 # Name of the container image.
-image: your-christopherfdev/chrisfagg_tech
+image: christopherfdev/chrisfagg_tech
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.1.227
+    - 192.168.1.170
   # job:
   #   hosts:
   #     - 192.168.0.1
