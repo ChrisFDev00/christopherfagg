@@ -8,7 +8,7 @@
     <div role="group" class="button-list">
       <% @social_channels.each do %>
         <%= link_to it.name,
-                      it.profile_url,
+                      it.url,
                       id: "button_#{it.id}",
                       class: "button",
                       target: "_blank",
@@ -21,8 +21,8 @@
   </div>
 
   <p>Hello &#128075;, <br>
-    I like code (mainly Rails), motorcycles, weightlifting & generally try to make the net a nicer place to be,
-    you can find me at the above places. <br>
+    I like code (mainly Rails), motorcycles, weightlifting & generally trying to make the net a nicer place to be,
+    you can find me above. <br>
   </p>
 
   <section>
