@@ -8,3 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.container{
+    padding-top: 50px;
+    justify-items: center;
+}

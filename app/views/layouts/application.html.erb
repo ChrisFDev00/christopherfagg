@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
   <head>
     <title><%= content_for(:title) || "Christopher Fagg" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,13 +19,15 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.red.min.css" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-  <%= render "shared/nav" %>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <%= render "shared/header" %>
+    <main class="container">
       <%= yield %>
     </main>
+  <%= render "shared/footer" %>
   </body>
 </html>
