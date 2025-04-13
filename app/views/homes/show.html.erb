@@ -1,4 +1,70 @@
 
 
-  <h1>test</h1>
-<button class="">Hello daisyUI #2!</button>
+  <h1> Christopher Fagg </h1>
+
+
+
+  <div class="button-container">
+    <div role="group" class="button-list">
+      <% @social_channels.each do %>
+        <%= link_to it.name,
+                      it.profile_url,
+                      id: "button_#{it.id}",
+                      class: "button",
+                      target: "_blank",
+                      data: {
+                        tooltip: "Opens in a new browser",
+                        placement: "bottom"
+                      } %>
+      <% end %>
+    </div>
+  </div>
+
+  <p>Hello &#128075;, <br>
+    I like code (mainly Rails), motorcycles, weightlifting & generally try to make the net a nicer place to be,
+    you can find me at the above places. <br>
+  </p>
+
+  <section>
+    <h3>OSS Contributions</h3>
+
+
+    <table>
+      <thead>
+      <tr>
+        <th>Repo</th>
+        <th>Name</th>
+        <th>Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @contributions.each do %>
+      <tr>
+        <td><% match = it.repository.match(/\.com\/([^\/]+)\/([^\/]+)/) %>
+          <% if match %>
+            <%= link_to "#{$1}/#{$2.gsub('.git', '')}",
+                        it.repository,
+                        target: "_blank"
+            %>
+          <% else %>
+            <%= link_to "Repo", it.repository %>
+          <% end %>
+        </td>
+        <td><%= it.name %></td>
+        <td><%= it.details %></td>
+      </tr>
+        <% end %>
+      </tbody>
+      <caption>
+        *When university is through these will be software based rather than docs. Just figured I'd help where
+        I could around other commitments.
+      </caption>
+    </table>
+
+
+  </section>
+
+
+
+
+

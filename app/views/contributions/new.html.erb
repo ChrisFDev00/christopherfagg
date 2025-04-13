@@ -1,0 +1,11 @@
+<% content_for :title, "New contribution" %>
+
+<h1>New contribution</h1>
+
+<%= render "form", contribution: @contribution %>
+
+<br>
+
+<div>
+  <%= link_to "Back to contributions", contributions_path %>
+</div>
