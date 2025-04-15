@@ -1,1 +1,2 @@
-web: bin/rails server
+web: op run --env-file=".env" rails s
+

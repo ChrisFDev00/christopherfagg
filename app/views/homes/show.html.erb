@@ -2,8 +2,6 @@
 
   <h1> Christopher Fagg </h1>
 
-
-
   <div class="button-container">
     <div role="group" class="button-list">
       <% @social_channels.each do %>
@@ -34,24 +32,30 @@
       <tr>
         <th>Repo</th>
         <th>Name</th>
-        <th>Details</th>
       </tr>
       </thead>
       <tbody>
-      <% @contributions.each do %>
+      <% @github.each do |pr| %>
       <tr>
-        <td><% match = it.repository.match(/\.com\/([^\/]+)\/([^\/]+)/) %>
-          <% if match %>
-            <%= link_to "#{$1}/#{$2.gsub('.git', '')}",
-                        it.repository,
-                        target: "_blank"
-            %>
-          <% else %>
-            <%= link_to "Repo", it.repository %>
+        <td>
+          <%= link_to pr.fetch(:url) do %>
+              <%= pr.fetch(:repo).split('/').slice(-2, 2).join('/') %> <br>
           <% end %>
         </td>
-        <td><%= it.name %></td>
-        <td><%= it.details %></td>
+        <td><%= pr.fetch(:title) %></td>
+      </tr>
+      <% end %>
+      <% console %>
+      <% @gitlab.each do | mr |%>
+      <tr>
+        <td>
+          <%= link_to mr.web_url do %>
+            <%= mr.references.full %>
+            <% end %>
+        </td>
+        <td>
+          <%= mr.title %>
+        </td>
       </tr>
         <% end %>
       </tbody>
