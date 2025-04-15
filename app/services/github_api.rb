@@ -11,7 +11,6 @@ class GithubApi
 
     result = @client.search_issues(query)
     result.items.map do |pr|
-      p pr
       {
         title: pr.title,
         url: pr.html_url,
