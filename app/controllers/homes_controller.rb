@@ -7,5 +7,4 @@ class HomesController < ApplicationController
     @social_channels = SocialChannel.all
     @contributions = Contribution.all
   end
-
 end
